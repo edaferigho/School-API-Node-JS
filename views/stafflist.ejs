@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%-include('./partials/head') %>
+</head>
+
+<body>
+    <div class="header">
+        <%- include('./partials/header') %>
+            <%- include('./partials/navigation') %>
+    </div>
+    <h1 class="font-bold text-xl uppercase flex justify-center items-center pt-4">Staff List</h1>
+    <div class="mt-6 ml-8">
+        <table  class="px-4 flex justify-center">
+            <tr>
+            <th class="p-5 ">Staff ID</th>
+            <th class="p-5">Staff Name</th>
+            <th class="p-5">Current Position</th>
+            <th class="p-5">Phone Number</th>
+            </tr>
+            <% for(staff of staffs){%>
+                <tr>
+                    <td class="p-5 ">
+                        <%= staff.id %>
+                    </td>
+                    <td class="p-5 ">
+                        <%= staff.name %>
+                    </td>
+                    <td class="p-5 ">
+                        <%= staff.position %>
+                    </td>
+                    <td class="p-5 ">
+                        <%= staff.phone %>
+                    </td>
+                </tr>
+
+            <% }%>
+            
+        </table>
+        
+    </div>
+
+</body>
+<style>
+ th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+} 
+</style>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%-include('./partials/head') %>
+</head>
+
+<body>
+   <table>
+       <tr><th>Name</th><td><%= student.lastName+' '+student.firstName %> </td></tr>
+       <tr><th>Examination Number</th><td><%= student.examId %> </td></tr>
+   </table>
+   <div>
+       <table>
+           <% for(result of student.result){%>
+            
+          <% } %>  
+
+       </table>
+
+   </div>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%-include('./partials/head') %>
+</head>
+
+<body>
+    <div class="header">
+        <%- include('./partials/header') %>
+            <%- include('./partials/navigation') %>
+    </div>
+    <h1 class="font-bold text-xl uppercase flex justify-center items-center pt-4">Student Examination Records</h1>
+    <div class="mt-6 ml-8">
+        <table class="px-4 flex justify-center">
+            <tr>
+                <th class="p-5 ">Id</th>
+                <th class="p-5 ">Examination ID</th>
+                <th class="p-5">First Name</th>
+                <th class="p-5">Last Name</th>
+                <th class="p-5">Sex</th>
+                <th class="p-5">Date of Birth</th>
+                <th class="p-5">Results</th>
+            </tr>
+                <%count=1 %> 
+            <% for(student of students){%>
+                <tr>
+                    <td class="p-5 ">
+                    <%= count %>
+                    </td>
+                    <td class="p-5 ">
+                        <%= student.examId %>
+                    </td>
+                    <td class="p-5 ">
+                        <%= student.firstName %>
+                    </td>
+                    <td class="p-5 ">
+                        <%= student.lastName%>
+                    </td>
+                    <td class="p-5 ">
+                        <%= student.sex %>
+                    </td>
+                    <td class="p-5 ">
+                        <%= student.dob %>
+                    </td>
+                    <td class="p-5 ">
+                        <a class="text-blue-600 hover:text-blue-400 underlined" target="_blank" href="/api/students/result/<%= student.examId %> ">View Result</a>
+                    </td>
+                </tr>
+                <% count++ %> 
+                
+                <% }%>
+
+        </table>
+
+    </div>
+
+</body>
+<style>
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+
+
+</html>
